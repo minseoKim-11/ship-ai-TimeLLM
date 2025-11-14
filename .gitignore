@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+
+# 가상환경
+.venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 모델/결과물
+*.pt
+*.pth
+*.h5
+checkpoints/
+runs/
+logs/
+
+# 데이터
+data/
+datasets/
+
+# 기타
+.DS_Store

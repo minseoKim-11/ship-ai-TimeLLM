@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 *.pyc
+.ipynb_checkpoints/
 
 # 가상환경
 .venv/
@@ -16,10 +17,15 @@ __pycache__/
 checkpoints/
 runs/
 logs/
+*.bin
+models/
+pretrained_models/
 
 # 데이터
 data/
 datasets/
+*.csv
+*.xlsx
 
 # 기타
 .DS_Store

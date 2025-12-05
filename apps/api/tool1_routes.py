@@ -1,12 +1,17 @@
 from fastapi import APIRouter
 from engine.tool1_stock_info import get_stock_info_engine
+from .tool1_schemas import Tool1StockInfoRequest
 
-router = APIRouter()
+router = APIRouter(prefix="/tool1", tags=["Tool1"])
 
-@router.get("/tool1/stock-info")
-def tool1_stock_info(ticker: str, start_date: str, end_date: str):
-    engine_resp = get_stock_info_engine(ticker, start_date, end_date)
+@router.post("/stock-info")
+def tool1_stock_info(body: Tool1StockInfoRequest):
+    engine_resp = get_stock_info_engine(
+        ticker=body.ticker,
+        start_date=body.start_date,
+        end_date=body.end_date,
+    )
     return {
         "status": "ok",
-        "response": engine_resp
+        "response": engine_resp,
     }

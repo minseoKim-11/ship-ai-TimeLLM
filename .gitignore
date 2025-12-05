@@ -9,6 +9,7 @@ __pycache__/
 
 # Jupyter
 .ipynb_checkpoints/
+notebooks/
 
 # 모델/결과물
 *.pt

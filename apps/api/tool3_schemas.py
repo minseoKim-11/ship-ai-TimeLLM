@@ -24,10 +24,14 @@ class Tool3Denorm(BaseModel):
     direction_confidence: float
 
 # 요청 바디
+# 요청 바디
+# 요청 바디
 class Tool3ForecastRequest(BaseModel):
+    """
+    - as_of_date, horizon_days 는 서버 내부에서 결정
+    """
     ticker: str
-    as_of_date: Optional[str] = None  # "YYYY-MM-DD" 형태, 옵션
-    horizon_days: int = 10            # 지금은 10 고정이지만 확장 고려
+
 
 # 응답 바디
 class Tool3ForecastResponse(BaseModel):

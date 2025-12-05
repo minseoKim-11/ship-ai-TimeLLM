@@ -20,8 +20,8 @@ class BuffettScoreRequest(BaseModel):
 def post_buffett_score(body: BuffettScoreRequest) -> Dict[str, Any]:
     """
     Tool4: 워렌 버핏식 Quality + Valuation 점수 계산 (POST)
-    - 입력: Ticker
-    - 로직: 해당 Ticker의 가장 최신 재무 데이터를 기반으로 점수 산출
+    - 입력: ticker
+    - 로직: 해당 ticker의 가장 최신 재무 데이터를 기반으로 점수 산출
     """
     try:
         result = compute_buffett_score_engine(

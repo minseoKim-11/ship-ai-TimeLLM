@@ -16,13 +16,14 @@ router = APIRouter(
 @router.post("/forecast-gap", response_model=Tool3ForecastResponse)
 def tool3_forecast_gap(body: Tool3ForecastRequest):
     """
-    Time-LLM 기반 TOOL3 갭 분석 API
+    Tool3: Gap Analysis (POST)
+    - 입력: ticker
+    - 로직: 예측 엔진을 기반으로 주가가 근거있는 갭을 갖는지를 계산하여 답함
     """
     try:
         result = get_forecast_gap_engine(
             ticker=body.ticker,
-            as_of_date=body.as_of_date,
-            horizon_days=body.horizon_days,
+            # as_of_date, horizon_days는 넘기지 않음 → 함수 디폴트 사용
         )
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))

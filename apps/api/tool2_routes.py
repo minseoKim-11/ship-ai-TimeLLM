@@ -7,7 +7,8 @@ router = APIRouter(prefix="/tool2", tags=["Tool2"])
 @router.post("/macro")
 def macro_pulse(body: Tool2MacroPulseRequest):
     """
-    TOOL2: 조선업 업황 스냅샷
-    - 입력 파라미터는 현재 없음
+    Tool2: 조선업 업황 및 지표 변화률 분석 (POST)
+    - 입력: null
+    - 로직: 조선업의 시황을 스냅샷으로 제공함
     """
     return get_macro_pulse_engine()
